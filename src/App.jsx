@@ -10,7 +10,7 @@ function App() {
       <CssBaseline>
         <Navbar />
         <Grid container>
-          <Grid item xs>
+          <Grid item xs={2}>
             <Sidebar />
           </Grid>
           <Grid item xs>
