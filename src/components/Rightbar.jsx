@@ -10,16 +10,19 @@ import {
   ListItemAvatar,
   ListItemText,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 
 export default function Rightbar() {
+  const isLaptop = useMediaQuery((theme) => theme.breakpoints.only("md"));
+
   return (
     <Box p={2}>
       <Box mb={3}>
         <Typography variant="h6" component="h2" fontWeight={100}>
           Online Friends
         </Typography>
-        <AvatarGroup max={7}>
+        <AvatarGroup max={isLaptop ? 5 : 7}>
           <Avatar
             alt="Remy Sharp"
             src="https://mui.com/static/images/avatar/1.jpg"
@@ -87,7 +90,7 @@ export default function Rightbar() {
           Latest Conversations
         </Typography>
         <List sx={{ width: "100%", bgcolor: "background.paper" }}>
-          <ListItem alignItems="flex-start">
+          <ListItem disablePadding={isLaptop} alignItems="flex-start">
             <ListItemAvatar>
               <Avatar
                 alt="Remy Sharp"
@@ -112,7 +115,7 @@ export default function Rightbar() {
             />
           </ListItem>
           <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
+          <ListItem disablePadding={isLaptop} alignItems="flex-start">
             <ListItemAvatar>
               <Avatar
                 alt="Travis Howard"
@@ -137,7 +140,7 @@ export default function Rightbar() {
             />
           </ListItem>
           <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
+          <ListItem disablePadding={isLaptop} alignItems="flex-start">
             <ListItemAvatar>
               <Avatar
                 alt="Cindy Baker"
