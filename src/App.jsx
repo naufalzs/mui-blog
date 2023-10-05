@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Feed from "./components/Feed";
 import Rightbar from "./components/Rightbar";
+import AddPost from "./components/AddPost";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -53,6 +54,7 @@ function App() {
               </Grid>
             </Grid>
           </Container>
+          <AddPost />
         </CssBaseline>
       </ThemeProvider>
     </>
