@@ -16,7 +16,7 @@ function App() {
           <Grid item xs>
             <Feed />
           </Grid>
-          <Grid item xs>
+          <Grid item xs={3}>
             <Rightbar />
           </Grid>
         </Grid>
