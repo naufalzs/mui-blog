@@ -18,7 +18,10 @@ import {
   Switch,
 } from "@mui/material";
 
-export default function Sidebar() {
+export default function Sidebar({ mode, setMode }) {
+  const toggleDarkMode = () =>
+    mode === "light" ? setMode("dark") : setMode("light");
+
   return (
     <Box p={2}>
       <List>
@@ -83,7 +86,7 @@ export default function Sidebar() {
             <ListItemIcon>
               <DarkMode />
             </ListItemIcon>
-            <Switch />
+            <Switch onChange={toggleDarkMode} />
           </ListItemButton>
         </ListItem>
       </List>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Container,
   CssBaseline,
@@ -11,7 +12,13 @@ import Feed from "./components/Feed";
 import Rightbar from "./components/Rightbar";
 
 function App() {
-  const theme = createTheme();
+  const [mode, setMode] = useState("light");
+
+  const theme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
 
   return (
     <>
@@ -28,7 +35,7 @@ function App() {
                   display: { xs: "none", md: "block" },
                 }}
               >
-                <Sidebar />
+                <Sidebar mode={mode} setMode={setMode} />
               </Grid>
               <Grid item xs>
                 <Feed />
